@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Clara Martin</title>
+    <style>
+/* ==============================
+   VARIABLES
+================================ */
+
+:root {
+    --navy: #14243a;
+    --navy-light: #203653;
+    --gold: #b89b62;
+    --cream: #f7f4ee;
+    --beige: #eee8dd;
+    --white: #ffffff;
+    --text: #333333;
+    --light-text: #6e6e6e;
+}
+
+
+/* ==============================
+   BASE
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 36, 58, 0.98),
+            rgba(20, 36, 58, 0.88)
+        );
+    color: white;
+    position: relative;
+    padding: 0 8%;
+}
+
+.navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.logo,
+.footer-logo {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: var(--gold);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.navbar a {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--gold);
+}
+
+
+.hero-content {
+    max-width: 850px;
+    padding-top: 12vh;
+}
+
+.surtitle {
+    color: var(--gold);
+    letter-spacing: 6px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(75px, 10vw, 145px);
+    line-height: 0.8;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.subtitle {
+    margin-top: 45px;
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.intro {
+    color: #bbc2ca;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+
+.hero-buttons {
+    margin-top: 45px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: var(--navy);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+.scroll {
+    position: absolute;
+    right: 8%;
+    bottom: 40px;
+    color: #aaa;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   SECTIONS
+================================ */
+
+.section {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    padding: 120px 8%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.section-number {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.section-content {
+    max-width: 1100px;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: clamp(42px, 5vw, 65px);
+    color: var(--navy);
+}
+
+.gold-line {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 25px 0 45px;
+}
+
+.large-text {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-bottom: 25px;
+}
+
+.section-content > p:not(.section-label) {
+    max-width: 850px;
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   FORMATION
+================================ */
+
+.dark-section {
+    max-width: none;
+    background: var(--navy);
+    color: #dfe3e8;
+}
+
+.dark-section .section-content {
+    max-width: 1100px;
+}
+
+.dark-section h2 {
+    color: white;
+}
+
+.timeline {
+    margin-top: 50px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.date {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.timeline h3 {
+    color: white;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.institution {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   COMPETENCES
+================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background: white;
+    padding: 40px;
+    border-top: 3px solid var(--gold);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.skill-number {
+    color: var(--gold);
+    font-family: Georgia, serif;
+}
+
+.skill-card h3 {
+    color: var(--navy);
+    font-size: 23px;
+    margin: 25px 0;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   EXPERIENCE
+================================ */
+
+.beige-section {
+    max-width: none;
+    background: var(--beige);
+}
+
+.experience {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    background: white;
+    max-width: 850px;
+    margin-top: 40px;
+}
+
+.experience-date {
+    background: var(--navy);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.experience-date span {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.experience-date strong {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.experience-content {
+    padding: 45px;
+}
+
+.experience-type {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.experience-content h3 {
+    font-size: 30px;
+    color: var(--navy);
+}
+
+.experience-content ul {
+    margin: 20px 0 0 20px;
+}
+
+
+/* ==============================
+   PROJETS
+================================ */
+
+.projects-section {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.projects-intro {
+    font-family: Georgia, serif;
+    font-size: 21px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.project-card {
+    background: var(--navy);
+    color: #d9dee5;
+    padding: 40px;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.project-card h3 {
+    color: white;
+    font-size: 27px;
+    margin: 45px 0 20px;
+}
+
+.project-card p {
+    font-size: 14px;
+}
+
+.project-card a {
+    color: var(--gold);
+    margin-top: auto;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* ==============================
+   CONTACT
+================================ */
+
+.contact {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact > p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.email {
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: clamp(22px, 4vw, 38px);
+    border-bottom: 1px solid var(--gold);
+}
+
+.contact-links {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.contact-links a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
+
+footer {
+    background: #0d1828;
+    color: #8e98a5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+    font-size: 11px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 850px) {
+
+    .navbar ul {
+        display: none;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .section {
+        display: block;
+        padding: 80px 7%;
+    }
+
+    .section-number {
+        margin-bottom: 20px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-date {
+        display: block;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+
+    </style>
+  
+</head>
+
+<body>
+
+<header class="hero">
+    <nav class="navbar">
+        <div class="logo">CM.</div>
+
+        <ul>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#experience">Expériences</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-content">
+
+        <p class="surtitle">PORTFOLIO</p>
+
+        <h1>Clara<br><span>Martin</span></h1>
+
+        <p class="subtitle">
+            Étudiante en BUT Carrières juridiques
+        </p>
+
+        <p class="intro">
+            Droit • Entreprise • Conseil
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projets" class="btn btn-primary">Découvrir mon portfolio</a>
+            <a href="cv-clara-martin.pdf" class="btn btn-outline">Télécharger mon CV</a>
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        ↓ Découvrir
+    </div>
+</header>
+
+
+<main>
+
+<!-- À PROPOS -->
+
+<section id="apropos" class="section about">
+
+    <div class="section-number">01</div>
+
+    <div class="section-content">
+
+        <p class="section-label">Présentation</p>
+
+        <h2>À propos de moi</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="large-text">
+            Étudiante en deuxième année de
+            <strong>BUT Carrières juridiques</strong>,
+            je développe mes compétences dans les différents
+            domaines du droit et de la gestion des organisations.
+        </p>
+
+        <p>
+            Particulièrement intéressée par le droit des entreprises
+            et le droit des contrats, je souhaite mettre mes connaissances
+            juridiques au service de situations professionnelles concrètes.
+        </p>
+
+        <p>
+            Ce portfolio présente mon parcours, mes compétences
+            et une sélection de travaux réalisés au cours de ma formation.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FORMATION -->
+
+<section id="formation" class="section dark-section">
+
+    <div class="section-number">02</div>
+
+    <div class="section-content">
+
+        <p class="section-label">Mon parcours</p>
+
+        <h2>Formation</h2>
+
+        <div class="gold-line"></div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="date">2025 — 2028</div>
+
+                <div>
+                    <h3>BUT Carrières juridiques</h3>
+                    <p class="institution">Institut Universitaire de Technologie</p>
+
+                    <p>
+                        Formation pluridisciplinaire associant droit,
+                        gestion, comptabilité et outils numériques.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">2025</div>
+
+                <div>
+                    <h3>Baccalauréat général</h3>
+                    <p class="institution">Lycée Victor Hugo</p>
+
+                    <p>
+                        Spécialités Sciences économiques et sociales
+                        et Histoire-géographie, géopolitique et sciences politiques.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMPÉTENCES -->
+
+<section id="competences" class="section">
+
+    <div class="section-number">03</div>
+
+    <div class="section-content">
+
+        <p class="section-label">Savoir-faire</p>
+
+        <h2>Mes compétences</h2>
+
+        <div class="gold-line"></div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <span class="skill-number">01</span>
+
+                <h3>Compétences juridiques</h3>
+
+                <ul>
+                    <li>Recherche juridique</li>
+                    <li>Analyse de jurisprudence</li>
+                    <li>Rédaction juridique</li>
+                    <li>Droit des contrats</li>
+                    <li>Droit des entreprises</li>
+                    <li>Veille juridique</li>
+                </ul>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">02</span>
+
+                <h3>Compétences numériques</h3>
+
+                <ul>
+                    <li>Microsoft Word</li>
+                    <li>Microsoft Excel</li>
+                    <li>PowerPoint</li>
+                    <li>Bases de données juridiques</li>
+                    <li>Recherche documentaire</li>
+                    <li>Intelligence artificielle</li>
+                </ul>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">03</span>
+
+                <h3>Compétences transversales</h3>
+
+                <ul>
+                    <li>Travail en équipe</li>
+                    <li>Communication écrite</li>
+                    <li>Expression orale</li>
+                    <li>Organisation</li>
+                    <li>Autonomie</li>
+                    <li>Esprit d'analyse</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="section beige-section">
+
+    <div class="section-number">04</div>
+
+    <div class="section-content">
+
+        <p class="section-label">Parcours professionnel</p>
+
+        <h2>Expériences</h2>
+
+        <div class="gold-line"></div>
+
+
+        <article class="experience">
+
+            <div class="experience-date">
+                <span>AVRIL</span>
+                <strong>2026</strong>
+                <span>JUIN</span>
+            </div>
+
+            <div class="experience-content">
+
+                <p class="experience-type">STAGE</p>
+
+                <h3>Assistante juridique</h3>
+
+                <p class="institution">
+                    Cabinet Dupont & Associés — Rennes
+                </p>
+
+                <p>
+                    Découverte du fonctionnement d'un cabinet juridique
+                    et participation aux activités quotidiennes de l'équipe.
+                </p>
+
+                <ul>
+                    <li>Recherche de jurisprudence</li>
+                    <li>Préparation de dossiers clients</li>
+                    <li>Rédaction de courriers</li>
+                    <li>Classement et analyse de pièces</li>
+                </ul>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- PROJETS -->
+
+<section id="projets" class="section projects-section">
+
+    <div class="section-number">05</div>
+
+    <div class="section-content">
+
+        <p class="section-label">Sélection de travaux</p>
+
+        <h2>Mes projets</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="projects-intro">
+            Quelques travaux réalisés au cours de ma formation
+            illustrant les compétences acquises.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span>01</span>
+                    <span>DROIT</span>
+                </div>
+
+                <h3>Analyse d'une décision de justice</h3>
+
+                <p>
+                    Étude d'une décision de la Cour de cassation :
+                    identification du problème juridique, analyse du
+                    raisonnement et présentation de la solution.
+                </p>
+
+                <a href="#">Découvrir le projet →</a>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span>02</span>
+                    <span>ENTREPRISE</span>
+                </div>
+
+                <h3>Projet de création d'entreprise</h3>
+
+                <p>
+                    Étude des différentes étapes juridiques nécessaires
+                    à la création d'une entreprise et choix d'une
+                    structure juridique adaptée.
+                </p>
+
+                <a href="#">Découvrir le projet →</a>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span>03</span>
+                    <span>VEILLE</span>
+                </div>
+
+                <h3>Veille juridique</h3>
+
+                <p>
+                    Mise en place d'une veille documentaire afin de suivre
+                    l'évolution de la législation et de la jurisprudence
+                    dans un domaine juridique.
+                </p>
+
+                <a href="#">Découvrir le projet →</a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <p class="section-label">Restons en contact</p>
+
+    <h2>Me contacter</h2>
+
+    <div class="gold-line center"></div>
+
+    <p>
+        Vous souhaitez échanger à propos de mon parcours
+        ou d'une opportunité professionnelle ?
+    </p>
+
+    <a href="mailto:clara.martin@example.com" class="email">
+        clara.martin@example.com
+    </a>
+
+    <div class="contact-links">
+        <a href="#">LinkedIn</a>
+        <a href="cv-clara-martin.pdf">Curriculum Vitae</a>
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">CM.</div>
+
+    <p>
+        Portfolio — BUT Carrières juridiques
+    </p>
+
+    <p>© 2026 Clara Martin</p>
+
+</footer>
+
+</body>
+</html>
+
